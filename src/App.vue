@@ -1,8 +1,8 @@
 <template>
 <div id="app">
 <p>{{count}}</p>
-  <button v-on:click="count++">点我+</button>
-      <button v-on:click="count--">点我-</button>
+  <button v-on:click="add">点我+</button>
+      <button v-on:click="sub">点我-</button>
       </div>
 </template>
 
@@ -14,8 +14,17 @@ export default {
     return {
       count:0
     };
+  },
+  methods: {
+  add:function(){
+    this.count++;
+  },
+  sub:function(){
+    this.count--;
   }
 }
+}
+
 </script>
 
 <style>
