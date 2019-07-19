@@ -1,17 +1,19 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+<div id="app">
+<p>{{count}}</p>
+  <button v-on:click="count++">点我+</button>
+      <button v-on:click="count--">点我-</button>
+      </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
 
 export default {
   name: 'app',
-  components: {
-    HelloWorld
+  data: function(){
+    return {
+      count:0
+    };
   }
 }
 </script>
