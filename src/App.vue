@@ -1,35 +1,28 @@
 <template>
-<div id="app">
-<p>{{count}}</p>
-  <button v-on:click="add">点我+</button>
-      <button v-on:click="sub">点我-</button>
-      </div>
+<div>
+<CounterGroup></CounterGroup>
+</div>
 </template>
 
 <script>
 
+import CounterGroup from './components/CountGroup.vue'
 export default {
-  name: 'app',
-  data: function(){
-    return {
-      count:0
+  name: "app",
+  data: function() {
+    return{
+    message:0
     };
   },
-  methods: {
-  add:function(){
-    this.count++;
-  },
-  sub:function(){
-    this.count--;
+  components:{
+    CounterGroup
   }
-}
-}
-
+};
 </script>
 
 <style>
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  font-family: "Avenir", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
