@@ -1,32 +1,37 @@
 <template>
-<div>
-<CounterGroup></CounterGroup>
-</div>
+    <div>
+        <CounterGroup v-if="!isShowHello"/>
+        <HelloWorld v-if="isShowHello"/>
+    </div>
 </template>
 
 <script>
 
-import CounterGroup from './components/CountGroup.vue'
-export default {
-  name: "app",
-  data: function() {
-    return{
-    message:0
+    import CounterGroup from './components/CountGroup.vue'
+    import HelloWorld from "./components/HelloWorld";
+
+    export default {
+        name: "app",
+        data: function () {
+            return {
+                message: 0,
+                isShowHello: false,
+            };
+        },
+        components: {
+            HelloWorld,
+            CounterGroup
+        }
     };
-  },
-  components:{
-    CounterGroup
-  }
-};
 </script>
 
 <style>
-#app {
-  font-family: "Avenir", Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+    #app {
+        font-family: "Avenir", Helvetica, Arial, sans-serif;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        text-align: center;
+        color: #2c3e50;
+        margin-top: 60px;
+    }
 </style>
