@@ -5,19 +5,13 @@
 </template>
 
 <script>
-    import CounterGroup from './components/CountGroup.vue'
-    import HelloWorld from "./components/HelloWorld";
-
-    import Router from './Router'
+    import Vue from 'vue'
 
     export default {
         name: "route-view",
         data: function () {
             return {
-                componentToShow: new Router([
-                    {path: '/', component: CounterGroup},
-                    {path: "/hello", component: HelloWorld}
-                ]).componentToShow
+                componentToShow: Vue.router.componentToShow
             };
         },
     }
