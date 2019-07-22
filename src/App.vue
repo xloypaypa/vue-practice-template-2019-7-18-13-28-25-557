@@ -10,12 +10,15 @@
     import CounterGroup from './components/CountGroup.vue'
     import HelloWorld from "./components/HelloWorld";
 
+    import Router from './Router'
+
     export default {
         name: "app",
         data: function () {
             return {
                 message: 0,
-                isShowHello: window.location.pathname === '/hello',
+                isShowHello: new Router('/hello').isMatch,
+
             };
         },
         components: {
