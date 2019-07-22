@@ -1,7 +1,6 @@
 <template>
     <div>
-        <component v-if="!isShowHello" :is="CounterGroup"/>
-        <component v-if="isShowHello" :is="HelloWorld"/>
+        <component v-if="!isShowHello" :is="componentToShow"/>
     </div>
 </template>
 
@@ -17,9 +16,10 @@
         data: function () {
             return {
                 message: 0,
-                isShowHello: new Router('/hello').isMatch,
-                HelloWorld,
-                CounterGroup
+                componentToShow: new Router([
+                    {path: '/', component: CounterGroup},
+                    {path: "/hello", component: HelloWorld}
+                ]).componentToShow
             };
         },
     };

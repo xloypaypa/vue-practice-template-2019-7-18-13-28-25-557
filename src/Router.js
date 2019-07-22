@@ -1,3 +1,9 @@
-export default function(pathname) {
-    this.isMatch = window.location.pathname === pathname;
+export default function(config) {
+    const self = this;
+    self.componentToShow = undefined;
+    config.forEach((current) => {
+        if (current.path === window.location.pathname) {
+            self.componentToShow = current.component;
+        }
+    })
 }
