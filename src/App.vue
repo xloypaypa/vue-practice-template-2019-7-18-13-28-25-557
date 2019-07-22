@@ -1,7 +1,7 @@
 <template>
     <div>
-        <CounterGroup v-if="!isShowHello"/>
-        <HelloWorld v-if="isShowHello"/>
+        <component v-if="!isShowHello" :is="CounterGroup"/>
+        <component v-if="isShowHello" :is="HelloWorld"/>
     </div>
 </template>
 
@@ -18,13 +18,10 @@
             return {
                 message: 0,
                 isShowHello: new Router('/hello').isMatch,
-
+                HelloWorld,
+                CounterGroup
             };
         },
-        components: {
-            HelloWorld,
-            CounterGroup
-        }
     };
 </script>
 
