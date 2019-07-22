@@ -1,27 +1,15 @@
 <template>
     <div>
-        <component v-if="!isShowHello" :is="componentToShow"/>
+        <route-view/>
     </div>
 </template>
 
 <script>
 
-    import CounterGroup from './components/CountGroup.vue'
-    import HelloWorld from "./components/HelloWorld";
-
-    import Router from './Router'
-
+    import RouteView from "./route-view";
     export default {
         name: "app",
-        data: function () {
-            return {
-                message: 0,
-                componentToShow: new Router([
-                    {path: '/', component: CounterGroup},
-                    {path: "/hello", component: HelloWorld}
-                ]).componentToShow
-            };
-        },
+        components: {RouteView}
     };
 </script>
 
