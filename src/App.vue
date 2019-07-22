@@ -15,7 +15,7 @@
         data: function () {
             return {
                 message: 0,
-                isShowHello: false,
+                isShowHello: window.location.pathname === '/hello',
             };
         },
         components: {
