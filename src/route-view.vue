@@ -1,6 +1,6 @@
 <template>
     <div>
-        <component v-if="!isShowHello" :is="componentToShow"/>
+        <component :is="componentToShow"/>
     </div>
 </template>
 
